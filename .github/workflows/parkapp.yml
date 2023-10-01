@@ -23,7 +23,9 @@ jobs:
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-
-
+      - name: Ls
+        run: ls -a
+        
       - name: Vet
         run: |
           go vet ./tests/...
